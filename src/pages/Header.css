@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.navbar {
+    background-color: rgb(51, 51, 51);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar h1 {
+    margin: 0;
+}
+ 
+li {
+    list-style: none;
+    text-shadow: none;
+    
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+
+
+.navbar li {
+    color: white;
+}
+
+.LOGO{
+    color: white;
+}
