@@ -10,19 +10,21 @@ export default function Register(){
     const [ password,setPassword] = useState('')
 
     const submitHandler = async (e) => {
+        const AJFBNAKLJFBALFJ = {name:name,email:email,password:password}
         e.preventDefault();
         try{
-
             console.log(name,email,password)
-            const data =  await axios.post(`${server}/register `,{
-                name,email,password
-            },{
-                headers:{
-                    "Content-Type":"<application /json",
-                },
-                withCredentials:true
+            const data =  await axios.post(`${server}/register`,
+                AJFBNAKLJFBALFJ
+            ,{
+                withCredentials:false
             })
-            
+            // {
+            //     headers:{
+            //         "Content-Type":"application /json",
+            //     },
+            //     withCredentials:false
+            // }
             console.log(data)
             toast.success("data.message")
         } catch(error) {
@@ -35,7 +37,7 @@ export default function Register(){
         <>
         <div className="login-container">
         <h2>SIGN UP </h2>
-        <form onSubmit={submitHandler} method="post" > 
+        <form onSubmit={submitHandler} method="post"  > 
             <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input type="text"

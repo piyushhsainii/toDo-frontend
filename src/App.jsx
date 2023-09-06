@@ -7,7 +7,7 @@ import Profile from './pages/Profile'
 import Register from './pages/Register'
 import { Toaster } from 'react-hot-toast'
 
-export const server =  "https://todo-mernapp.onrender.com"
+export const server =  "http://localhost:5000"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,7 +20,7 @@ function App() {
         <Route path='/' element= {<Home/>} />
         <Route path='/profile' element= {<Profile />} />
         <Route path='/login' element= { <Login />} />
-        <Route path='/register' element= {<Register />} />
+        <Route path='/registerpage' element= {<Register />} />
       </Routes>
       <Toaster/>
     </Router>

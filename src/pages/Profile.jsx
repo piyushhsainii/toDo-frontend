@@ -1,10 +1,12 @@
 import React from "react";
-
+import "./Home.css"
 
 export default function Profile(){
-    <>
-    <div >
-        Profile
+    return (
+        <>
+    <div>
+       <h1> Profile</h1>
     </div>
     </>
+        )
 }

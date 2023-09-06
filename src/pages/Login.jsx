@@ -23,7 +23,7 @@ export default function Login(){
             </div>
             <button type="submit" className="submit-btn">Submit</button>
             <h5 className="form-text">OR</h5>
-            <div className="sign-text"><Link to={'/register'}> Sign Up </Link></div>
+            <div className="sign-text"><Link to={'/registerpage'}> Sign Up </Link></div>
         </form>
     </div>
         </>
