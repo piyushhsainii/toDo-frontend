@@ -1,43 +1,46 @@
-import { Link } from "react-router-dom"
-import React, { useState } from "react";
+import { Link, Navigate } from "react-router-dom"
+import React, { useContext, useState } from "react";
 import axios  from "axios";
 import { server } from "../App";
 import { toast } from "react-hot-toast";
-
+import { Context } from "../main";
+ 
 export default function Register(){
     const [ name,setName] = useState('')
     const [ email,setEmail] = useState('') 
     const [ password,setPassword] = useState('')
+    const {authenticated,isAuthenticated, loading ,setLoading} =  useContext(Context)
+    
 
     const submitHandler = async (e) => {
         const AJFBNAKLJFBALFJ = {name:name,email:email,password:password}
         e.preventDefault();
+        setLoading(true)
         try{
             console.log(name,email,password)
             const data =  await axios.post(`${server}/register`,
                 AJFBNAKLJFBALFJ
             ,{
-                withCredentials:false
+                withCredentials:true
             })
-            // {
-            //     headers:{
-            //         "Content-Type":"application /json",
-            //     },
-            //     withCredentials:false
-            // }
+
             console.log(data)
             toast.success("data.message")
+            isAuthenticated(true)
+            setLoading(false)
         } catch(error) {
             toast.error("Some error")
             console.log(error)
+            isAuthenticated(false)
+            setLoading(false)
     }
     }
-        
+        if(authenticated) return <Navigate to={"/"} />; 
     return (
         <>
         <div className="login-container">
         <h2>SIGN UP </h2>
-        <form onSubmit={submitHandler} method="post"  > 
+        <form onSubmit={submitHandler} > 
             <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input type="text"
