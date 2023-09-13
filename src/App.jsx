@@ -9,8 +9,8 @@ import { Toaster } from 'react-hot-toast'
 import axios from 'axios'
 import { Context } from './main'
 
-// export const server =  "https://todo-mernapp.onrender.com"
-export const server =  "http://localhost:5000"
+export const server =  "https://todo-mernapp.onrender.com"
+// export const server =  "http://localhost:5000"
 
 
 
