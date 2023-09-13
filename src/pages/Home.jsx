@@ -3,7 +3,7 @@ import '../pages/Home.css'
 import axios from 'axios'
 import { server } from '../App'
 import toast from 'react-hot-toast'
-import ToDoItem from './toDo'
+import ToDoItem from './ToDo'
 import { Context } from '../main'
 import { Navigate } from 'react-router-dom'
 export default function Home() {
