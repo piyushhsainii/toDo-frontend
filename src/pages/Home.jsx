@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import './Home.css'
+import '../pages/Home.css'
 import axios from 'axios'
 import { server } from '../App'
 import toast from 'react-hot-toast'
