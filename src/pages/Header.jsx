@@ -9,7 +9,7 @@ import { toast } from 'react-hot-toast'
 
 export default function  Header() {
 
-  const {authenticated, isAuthenticated} =  useContext(Context)
+  const {authenticated, isAuthenticated , setRefresh} =  useContext(Context)
     const logoutHandler = async ()=>{
         try{
             await axios.get(`${server}/logout`,{
@@ -20,8 +20,9 @@ export default function  Header() {
 
     } catch (error){
         toast.error(error.response.data)
+        console.log(error)
         isAuthenticated(true)
-
+        onClick={refresh}
     }
     }
     return (
@@ -30,7 +31,7 @@ export default function  Header() {
         <h1 className='LOGO'>To-Do</h1>
         <ul>
          <Link to={'/'}> <li>  Home </li></Link>
-            <Link to={'/profile'} > <li > Profile </li> </Link>           
+            <Link to={'/profile'}  > <li > Profile </li> </Link>           
            {
              authenticated ? <Link to={'/login'} ><li onClick={logoutHandler}> Logout </li></Link> : <Link to={'/login'} ><li>Login </li></Link>
             }

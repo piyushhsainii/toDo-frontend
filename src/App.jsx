@@ -9,8 +9,8 @@ import { Toaster } from 'react-hot-toast'
 import axios from 'axios'
 import { Context } from './main'
 
-export const server =  "https://todo-mernapp.onrender.com"
-// export const server =  "http://localhost:5000"
+// export const server =  "https://todo-mernapp.onrender.com"
+export const server =  "http://localhost:5000"
 
 
 
@@ -22,10 +22,14 @@ function App() {
     axios.get(`${server}/getProfile`, {
       withCredentials: true
     }).then((res) => {
-      setUser(res.data.user)
-    console.log(req.data.user)
-      isAuthenticated(true)
+      setUser(res.data)
+      if(res.data.mess === "Login First"){
+      isAuthenticated(false)}
+      else {
+        isAuthenticated(true)
+      }
     }).catch((error) => {
+      console.log(error)
       isAuthenticated(false)
       setUser({})
     })
@@ -41,7 +45,7 @@ function App() {
         <Route path='/' element= {<Home/>} />
         <Route path='/profile' element= {<Profile />} />
         <Route path='/login' element= { <Login />} />
-        <Route path='/registerpage' element= {<Register />} />
+        <Route path='/registerpage'  element= {<Register />} />
       </Routes>
       <Toaster/>
     </Router>

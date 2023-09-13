@@ -1,0 +1,43 @@
+.ToDo{
+    margin: auto;
+    max-width: 30rem;
+    border: 1px solid rgba(0, 0, 0, 0.315);
+    /* border-radius: 5px; */
+    margin-bottom: 10px;
+}
+
+.Title{
+    max-width: 30rem;
+    align-items: center;
+    margin: auto;
+    align-content: center;
+    padding: 0.6rem 0;
+    background-color: rgba(255, 255, 255, 0.897);
+}
+
+h4{
+    margin: auto;
+    padding: 5px 15px;
+
+}
+
+.List{
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.del-btn{
+    padding: 6px 18px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+
+.check[type="checkbox"]{
+    height: 15px;
+    width: 30px;
+
+}

@@ -10,7 +10,7 @@ export default function Login(){
     const [ email,setEmail] = useState('') 
     const [ password,setPassword] = useState('')
 
-    const {authenticated,isAuthenticated, loading ,setLoading} = useContext(Context)    
+    const {authenticated,isAuthenticated, loading ,setLoading , refresh ,setRefresh} = useContext(Context)    
     if(authenticated) return <Navigate to={"/"} />; 
 
 
@@ -27,6 +27,8 @@ export default function Login(){
             toast.success("Welcome back")
             isAuthenticated(true)
             setLoading(false)
+            setRefresh((prev) => !prev)
+            console.log(refresh)
         } catch(error) {
             toast.error(error.response.data)
             isAuthenticated(false)
@@ -66,6 +68,8 @@ export default function Login(){
             <h5 className="form-text">OR</h5>
             <div className="sign-text"><Link to={'/registerpage'}> Sign Up </Link></div>
         </form>
+
+
     </div>
         </>
     )

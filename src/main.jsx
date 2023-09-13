@@ -5,11 +5,11 @@ import App from './App.jsx'
 export const Context = createContext({isAuthenticated: false })
 
   export const AppWrapper = ()=>{
-    const [authenticated, isAuthenticated] = useState( );
-    const [loading,setLoading] = useState(false)
-    const [ user, setUser] = useState()
+    const [authenticated, isAuthenticated] = useState(false);
+    const [loading,setLoading] = useState(false);
+    const [ user, setUser] = useState({});
+    const [ refresh, setRefresh] = useState(false);
 
-    console.log(loading,"loading")
     console.log(authenticated,"authenticate")
     return (
       <Context.Provider value={
@@ -18,7 +18,9 @@ export const Context = createContext({isAuthenticated: false })
         loading,
         setLoading,
         setUser,
-        user
+        user, 
+        refresh, 
+        setRefresh
       }
       }>
       <App />
