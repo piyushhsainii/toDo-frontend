@@ -1,5 +1,5 @@
 import react from 'react'
-import './todo.css'
+import './toDo.css'
 
 const ToDoItem = ({id ,title,description,isCompleted,updateHandler, deleteHandler}) => {
     return (
